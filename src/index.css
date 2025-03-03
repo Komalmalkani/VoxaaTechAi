@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: gilroy; */
+}
+
+html{
+  height: 100%;
+width: 100%;
+}
+
+
+body{
+  height: 100%;
+  width: 100%;
+  background-color: #000003;
+  /* color: white; */
+  overflow: hidden;
+  overflow-y: auto; /* Allows vertical scrolling but hides scrollbar */
+  font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.664) !important;
+  opacity: 1 !important;
+}
+
+
+
+input,
+textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.699);
+  border: none !important;
+
+}
+

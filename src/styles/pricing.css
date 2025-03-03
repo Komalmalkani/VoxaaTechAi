@@ -1,0 +1,30 @@
+.pricing-page {
+    padding: 20px;
+  }
+  
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .pricing-card {
+    max-width: 350px;
+    background: white;
+    transition: 0.3s;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .faq-section {
+    margin-top: 40px;
+  }
+  
+  .newsletter-section {
+    max-width: 600px;
+    margin: auto;
+  }
+  
