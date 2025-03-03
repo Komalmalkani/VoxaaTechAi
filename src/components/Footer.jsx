@@ -9,7 +9,6 @@ const Footer = () => {
       whileInView={{ y: 0, opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      style={{ backgroundColor: "#111" }}
     >
       <Container>
         <Row className="text-center">
