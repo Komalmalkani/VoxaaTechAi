@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   const placeholders = {
-    fullName: "Harshit Malkani",
-    email: "voxaaTechAi@gmail.com",
-    Mobile: "99099XXXXX",
-    businessName: "Apple",
+    fullName: "John Deo",
+    email: "voxaa@gmail.com",
+    Mobile: "+1 123-456-7890",
+    businessName: "xyz",
     
     aiPlan: "",
     message: "Your message...",
@@ -39,7 +39,7 @@ const Contact = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData), // Send form data as JSON
-      });
+      }); 
   
       const result = await response.json();
       console.log("API Response:", result);
@@ -145,7 +145,7 @@ const Contact = () => {
               <Form onSubmit={handleSubmit}>
                 {Object.keys(placeholders).map((key, index) => (
                   <Form.Group className="mb-3" key={index} >
-                    <Form.Label className="fw-semibold text-secondary text-capitalize"
+                    <Form.Label className="fw-semibold text-secondary text-capitalize text-start"
                     >
                       {key.replace(/([A-Z])/g, " $1").trim()}
                     </Form.Label>

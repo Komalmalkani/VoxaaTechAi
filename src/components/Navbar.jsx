@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import VoxaatechLogo from "../assets/vpxxa --.png";
 
 const navVariants = {
   hidden: { opacity: 0, y: -30 },
@@ -51,16 +52,15 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       animate="visible"
-      style={{ backdropFilter: "blur(10px)", border:"none" }}
+      style={{  border: "none",backdropFilter: "blur(10px)",}}
     >
       <div className="container">
-        <Link
-          className="navbar-brand fw-bold text-light fs-3"
-          to="/"
-          onClick={handleNavClick}
-        >
-          Voxxa Tech AI
+        <div style={{ width:"12vw",height: "5vw",display:"flex" , justifyContent:"center" , alignItems:"center"}} >
+        <Link to="/" onClick={handleNavClick} className="navbar-brand">
+      <img src={VoxaatechLogo} alt="Voxaatech AI Logo" className="img-fluid w-auto" style={{ maxWidth: "100%", height: "auto", objectFit: "contain"  }} />
         </Link>
+        </div>
+       
 
         <button
           className="navbar-toggler border-0"

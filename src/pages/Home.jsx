@@ -3,7 +3,7 @@ import Pricing from "./Pricing";
 import IntegrationsPage from "../pages/Integration";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from "react-router-dom"; // Import Link
 import Contact from "../pages/Contact";
 
 const Home = () => {
@@ -36,7 +36,7 @@ const Home = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundBlendMode: "multiply",
-            zIndex: -1, 
+            zIndex: -1,
           }}
         />
 
@@ -84,19 +84,21 @@ const Home = () => {
           >
             <button
               className="btn me-4 text-white"
-            
               style={{
                 background:
                   "linear-gradient(90deg, rgb(102, 42, 148), rgb(151, 27, 89), rgb(199, 126, 37))",
                 border: "none",
                 padding: "10px 20px",
                 fontSize: "18px",
-                textDecoration: "none"              }}
+                textDecoration: "none",
+              }}
             >
-
-<Link to="/pricing" style={{ color: "white", textDecoration: "none" }}>
-        Get Started
-      </Link>
+              <Link
+                to="/pricing"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Get Started
+              </Link>
             </button>
 
             <button
@@ -109,26 +111,29 @@ const Home = () => {
                 fontSize: "16px",
               }}
             >
-           <Link to="/Integrations" style={{ color: "white", textDecoration: "none" }}>
-           Learn The Future
-      </Link>
+              <Link
+                to="/Integrations"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Learn The Future
+              </Link>
             </button>
           </motion.div>
         </motion.section>
       </section>
 
       {/* Scrollable Content */}
-      <div className="container-fluid px-4 py-2 text-center">
+      <div className="container-fluid px-4  text-center">
         {/* Features Section */}
-        <section className="row g-4 mb-5"
+        <section
+          className="row g-4  mt-n5  mb-5"
           style={{
-          
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
             backgroundImage:
-            "radial-gradient(#000003,#06071D,#000003,#000003),url('https://e7.pngegg.com/pngimages/841/592/png-clipart-blue-smoke-illustration-smoke-transparency-and-translucency-youtube-background-light-smoke-blue-hand-thumbnail.png')",
+              "radial-gradient(#000003,#06071D,#000003,#000003),url('https://e7.pngegg.com/pngimages/841/592/png-clipart-blue-smoke-illustration-smoke-transparency-and-translucency-youtube-background-light-smoke-blue-hand-thumbnail.png')",
             backgroundColor: "",
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -143,8 +148,7 @@ const Home = () => {
             viewport={{ once: false, amount: 0.2 }} // Re-triggers when 20% of element is in view
             className="col-md-4"
           >
-            <div className="card p-4 shadow"
-            >
+            <div className="card p-4 shadow">
               <h3>New Facilitator</h3>
               <p>Import Knowledge Base and upgrade your AI assistant.</p>
             </div>
@@ -183,7 +187,6 @@ const Home = () => {
 
         {/* Pricing & Integrations */}
         <Pricing />
-        <IntegrationsPage />
         <Contact />
       </div>
     </div>
