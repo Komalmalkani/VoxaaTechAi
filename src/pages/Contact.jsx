@@ -32,24 +32,27 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
+    const formData = { fullName, email, Mobile };
+  
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbz7W0sIHLvL5u4aYyhaCgaV1C2kkp3thfBqea5_P6zTJnBD78vJdxxyMQa24e1c0scrrw/exec", {
+      const response = await fetch("http://localhost:5000/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData), // Send form data as JSON
-      }); 
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
   
-      const result = await response.json();
-      console.log("API Response:", result);
-      alert("Form submitted successfully!");
-  
+      const data = await response.json();
+      if (response.ok) {
+        alert("Message sent successfully!");
+      } else {
+        alert("Failed to send message: " + data.error);
+      }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Something went wrong. Please try again later.");
+      console.error("Error sending email:", error);
+      alert("Something went wrong. Please try again.");
     }
   };
+  
   
   
   

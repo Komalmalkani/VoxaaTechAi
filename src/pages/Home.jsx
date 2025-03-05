@@ -12,6 +12,7 @@ const Home = () => {
   const isInView1 = useInView(ref1, { once: true });
   const isInView2 = useInView(ref2, { once: true });
   const isInView3 = useInView(ref3, { once: true });
+  const text = "The Future Is Here.";
 
   return (
     <div className="w-100">
@@ -48,23 +49,31 @@ const Home = () => {
           viewport={{ once: true }}
           className="mb-5"
         >
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="display-2 fw-bold mt-n2"
-            style={{
-              background:
-                "linear-gradient(90deg,rgb(163, 135, 184),rgb(184, 52, 118),rgb(177, 118, 47))",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            The Future Is Here.
-          </motion.h1>
-
+    
+<motion.h1
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  className="display-2 fw-bold mt-n2"
+  style={{
+    background:
+      "linear-gradient(90deg,rgb(163, 135, 184),rgb(184, 52, 118),rgb(177, 118, 47))",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    color: "transparent",
+  }}
+>
+  {text.split("").map((letter, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.05, delay: index * 0.1 }} // Simulating typing
+    >
+      {letter}
+    </motion.span>
+  ))}
+</motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,12 +85,13 @@ const Home = () => {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            viewport={{ once: true }}
-           className="mt-4 px-3 d-flex flex-column flex-md-row gap-3"
-          >
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 1, delay: 0.6 }}
+  viewport={{ once: true }}
+  className="mt-4 px-3 d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center"
+>
+
             <button
               className="btn me-4 text-white"
               style={{
@@ -91,6 +101,8 @@ const Home = () => {
                 padding: "10px 20px",
                 fontSize: "18px",
                 textDecoration: "none",
+                boxShadow:"1px 5px 5px black"
+
               }}
             >
               <Link
@@ -105,10 +117,11 @@ const Home = () => {
               className="btn me-4 "
               style={{
                 color: "white",
-                border: "2px solid white",
+                border: "1px solid white",
                 background: "transparent",
                 padding: "10px 20px",
                 fontSize: "18px",
+                boxShadow:"2px 8px 8px black"
               }}
             >
               <Link
