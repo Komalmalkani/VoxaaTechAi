@@ -7,9 +7,26 @@
     .hero-section {
       min-height: 80vh; /* Reduce height for mobile */
       padding-bottom: 2rem; /* Less bottom padding */
-      padding-top: 2rem; /* Adjust top padding */
+      padding-top: 1rem; /* Adjust top padding */
     }
   
+ /* Smaller mobile devices */
+ @media (max-width: 576px) {
+    .hero-section {
+        min-height: 50vh; /* Reduce height for mobile */
+
+    }
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 400px) {
+    .hero-section{
+        min-height: 50vh; /* Reduce height for mobile */
+
+    }
+  }
+  
+
     .hero-section h1 {
       font-size: 2rem; /* Adjust font size for smaller screens */
     }
