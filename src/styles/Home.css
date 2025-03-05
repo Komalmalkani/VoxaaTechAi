@@ -6,9 +6,7 @@
   @media (max-width: 768px) {
     .hero-section {
       min-height: 80vh; /* Reduce height for mobile */
-      padding-bottom: 2rem; /* Less bottom padding */
-      padding-top: 1rem; /* Adjust top padding */
-    }
+        }
   
  /* Smaller mobile devices */
  @media (max-width: 576px) {

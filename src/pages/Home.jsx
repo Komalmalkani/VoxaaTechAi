@@ -132,7 +132,7 @@ const Home = () => {
             width: "100%",
             height: "100%",
             backgroundImage:
-              "radial-gradient(#000003,#06071D,#000003,#000003),url('https://e7.pngegg.com/pngimages/841/592/png-clipart-blue-smoke-illustration-smoke-transparency-and-translucency-youtube-background-light-smoke-blue-hand-thumbnail.png')",
+              "radial-gradient(#06071D,#000003,#000003),url('https://e7.pngegg.com/pngimages/841/592/png-clipart-blue-smoke-illustration-smoke-transparency-and-translucency-youtube-background-light-smoke-blue-hand-thumbnail.png')",
             backgroundSize: "cover",
             backgroundColor:"",
             backgroundPosition: "center",
@@ -146,12 +146,12 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: false, amount: 0.2 }} // Re-triggers when 20% of element is in view
-            className="col-md-4 border-0 "
+            className="col-md-4 border-0 bg-transparent"
           
           >
-            <div className="card p-4 shadow border-0" >
+            <div className="card p-4 shadow border-0 " >
               <h3>New Facilitator</h3>
-              <p>Import Knowledge Base and upgrade your AI assistant.</p>
+              <p className="text-secondary">Import Knowledge Base and upgrade your AI assistant.</p>
             </div>
           </motion.div>
 

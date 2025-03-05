@@ -41,9 +41,9 @@ const Faq = () => {
 
   return (
     <motion.div
-      className="container py-5"
+      className="container px-5 py-5"
       style={{
-        maxWidth: "100vw",
+        maxWidth: "93vw",
         margin: "0 auto",
         padding: "20px",
         borderRadius: "12px",
