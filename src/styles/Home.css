@@ -7,6 +7,10 @@
     .hero-section {
       min-height: 80vh; /* Reduce height for mobile */
         }
+        .hero-btn{
+          width: 60%;
+        }
+      }
   
  /* Smaller mobile devices */
  @media (max-width: 576px) {
@@ -14,18 +18,22 @@
         min-height: 80vh; /* Reduce height for mobile */
 
     }
+    .hero-btn{
+      width: 80%;
+    }
   
   }
   
   /* Extra small screens */
   @media (max-width: 400px) {
     .hero-section{
-        min-height: 70vh; /* Reduce height for mobile */
+        min-height: 60vh; /* Reduce height for mobile */
 
     }
-  }
+    .hero-btn{
+      width: 80%;
+    }
   
-
     .hero-section h1 {
       font-size: 2rem; /* Adjust font size for smaller screens */
     }
@@ -47,4 +55,3 @@
       padding: 1rem; /* Adjust card spacing */
     }
   }
-  
