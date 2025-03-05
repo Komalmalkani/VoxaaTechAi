@@ -123,7 +123,7 @@ const Contact = () => {
             style={{ paddingLeft: "13vw" }}
           >
             <strong>Harshit Malkani</strong> <br />
-            CEO, VoxaaTechAI
+            Founder, VoxaaTechAI
           </motion.p>
         </Col>
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import VoxaatechLogo from "../assets/vpxxa --.png";
-
+import "../styles/Navbar.css";
 const navVariants = {
   hidden: { opacity: 0, y: -30 },
   visible: {
@@ -52,23 +52,40 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       animate="visible"
-      style={{  border: "none",backdropFilter: "blur(10px)",}}
+      style={{ border: "none", backdropFilter: "blur(10px)" }}
     >
       <div className="container">
-        <div style={{ width:"12vw",height: "5vw",display:"flex" , justifyContent:"center" , alignItems:"center"}} >
-        <Link to="/" onClick={handleNavClick} className="navbar-brand">
-      <img src={VoxaatechLogo} alt="Voxaatech AI Logo" className="img-fluid w-auto" style={{ maxWidth: "100%", height: "auto", objectFit: "contain"  }} />
-        </Link>
+        <div className="logo-container ">
+          <Link to="/" onClick={handleNavClick} className="navbar-brand">
+            <img
+              src={VoxaatechLogo}
+              alt="Voxaatech AI Logo"
+              className="logo-img"
+            />
+          </Link>
         </div>
-       
 
-        <button
-          className="navbar-toggler border-0"
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <div>
+          <Link
+            className="btn text-light   d-lg-none"
+            to="/contact"
+            onClick={handleNavClick}
+            style={{ background: "transparent", fontSize: "14px" }}
+          >
+            Contact
+          </Link>
+
+          <button
+            className="navbar-toggler border-0 "
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <span
+              className="navbar-toggler-icon"
+              style={{ filter: "invert(1)" }}
+            ></span>
+          </button>
+        </div>
 
         <div
           className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}

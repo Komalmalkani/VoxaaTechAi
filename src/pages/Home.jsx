@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import Pricing from "./Pricing";
-import IntegrationsPage from "../pages/Integration";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom"; // Import Link
-import Contact from "../pages/Contact";
-
+import Contact from "../pages/Contact"
+import "../styles/Home.css"
 const Home = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
@@ -17,7 +16,8 @@ const Home = () => {
   return (
     <div className="w-100">
       {/* Hero Section - Fullscreen */}
-      <section className="min-vh-100 d-flex flex-column justify-content-center align-items-center text-center pb-5">
+      <section className="hero-section d-flex flex-column justify-content-center align-items-center text-center">
+
         {/* Background Wrapper with Animation */}
         <motion.div
           initial={{ opacity: 0, scale: 1.1 }}
@@ -80,7 +80,7 @@ const Home = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
             viewport={{ once: true }}
-            className="mt-3"
+           className="mt-4 px-3 d-flex flex-column flex-md-row gap-3"
           >
             <button
               className="btn me-4 text-white"
@@ -102,13 +102,13 @@ const Home = () => {
             </button>
 
             <button
-              className="btn"
+              className="btn me-4 "
               style={{
                 color: "white",
                 border: "2px solid white",
                 background: "transparent",
                 padding: "10px 20px",
-                fontSize: "16px",
+                fontSize: "18px",
               }}
             >
               <Link
@@ -123,10 +123,9 @@ const Home = () => {
       </section>
 
       {/* Scrollable Content */}
-      <div className="container-fluid px-4  text-center">
+      <div className="container-fluid px-4  text-center " style={{border:"none"}}>
         {/* Features Section */}
-        <section
-          className="row g-4  mt-n5  mb-5"
+        <section className="features-section row g-4 mt-n5 mb-5 border-0" 
           style={{
             top: 0,
             left: 0,
@@ -134,11 +133,12 @@ const Home = () => {
             height: "100%",
             backgroundImage:
               "radial-gradient(#000003,#06071D,#000003,#000003),url('https://e7.pngegg.com/pngimages/841/592/png-clipart-blue-smoke-illustration-smoke-transparency-and-translucency-youtube-background-light-smoke-blue-hand-thumbnail.png')",
-            backgroundColor: "",
             backgroundSize: "cover",
+            backgroundColor:"",
             backgroundPosition: "center",
             backgroundBlendMode: "multiply",
             zIndex: -1, // Keeps background behind content
+            borderRadius:"50%"
           }}
         >
           <motion.div
@@ -146,9 +146,10 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: false, amount: 0.2 }} // Re-triggers when 20% of element is in view
-            className="col-md-4"
+            className="col-md-4 border-0 "
+          
           >
-            <div className="card p-4 shadow">
+            <div className="card p-4 shadow border-0" >
               <h3>New Facilitator</h3>
               <p>Import Knowledge Base and upgrade your AI assistant.</p>
             </div>
@@ -186,9 +187,9 @@ const Home = () => {
         {/* AI Testing Section */}
 
         {/* Pricing & Integrations */}
-        <Pricing />
-        <Contact />
       </div>
+        <Pricing />
+        <Contact/>
     </div>
   );
 };

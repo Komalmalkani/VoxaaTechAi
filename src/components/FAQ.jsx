@@ -50,8 +50,11 @@ const Faq = () => {
         boxShadow: "0px 0px 20px rgba(255, 255, 255, 0.1)",
         border: "1px solid rgba(255, 255, 255, 0.2)",
         background: "radial-gradient(#08332F, #000003, #000003)",
+        display:"flex",
       }}
     >
+      <div style={{display:"flex"}}>
+
       <motion.h1
         className="text-center fw-bold my-4"
         initial={{ opacity: 0, y: 50 }}
@@ -60,8 +63,9 @@ const Faq = () => {
         whileHover={{ scale: 1.05 }}
         style={{ color: "#fff" }}
       >
-        Frequently Asked Questions
+       <span >Frequently</span> Asked Questions
       </motion.h1>
+      </div>
 
       <div
         className="accordion mx-auto"
