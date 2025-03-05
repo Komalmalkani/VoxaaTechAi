@@ -164,7 +164,7 @@ const Home = () => {
           >
             <div className="card p-4 shadow">
               <h3>AI Voice Agent</h3>
-              <p>Test AI LLM with 20,104+ integrations worldwide.</p>
+              <p className="text-secondary">Test AI LLM with 20,104+ integrations worldwide.</p>
             </div>
           </motion.div>
 
@@ -177,7 +177,7 @@ const Home = () => {
           >
             <div className="card p-4 shadow">
               <h3>Custom Personalities</h3>
-              <p>
+              <p className="text-secondary">
                 Choose from professional, enthusiastic, or bubbly personalities.
               </p>
             </div>
