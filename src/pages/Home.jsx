@@ -77,9 +77,9 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
-            className="lead text-light"
+            className="lead text-light py-2"
           >
-            Shape the future with Voice-Powered Innovation.
+            Embrace the power of cutting-edge technology & shape the future with voice-driven intelligence.
           </motion.p>
 
           <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center">

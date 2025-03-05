@@ -15,11 +15,15 @@
  /* Smaller mobile devices */
  @media (max-width: 576px) {
     .hero-section {
-        min-height: 60vh; /* Reduce height for mobile */
+        min-height: 80vh; /* Reduce height for mobile */
 
     }
     .hero-btn{
-      width: 60%;
+      width: 90%;
+    }
+
+    .features-section {
+      padding: 1rem 0;
     }
   
   }
@@ -27,7 +31,7 @@
   /* Extra small screens */
   @media (max-width: 400px) {
     .hero-section{
-        min-height: 50vh; /* Reduce height for mobile */
+        min-height: 80vh; /* Reduce height for mobile */
 
     }
     .hero-btn{
