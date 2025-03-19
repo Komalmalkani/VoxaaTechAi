@@ -36,7 +36,7 @@ const PricingCard = ({ plan }) => {
         borderRadius: "12px",
         boxShadow: "0px 0px 20px rgba(255, 255, 255, 0.16)",
 border:"1px solid white",
-      }}
+     }}
     >
       <div className="card-body text-center">
         <h2
@@ -47,6 +47,7 @@ border:"1px solid white",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
+       
           }}
         >
           {plan?.title || "No Title"}

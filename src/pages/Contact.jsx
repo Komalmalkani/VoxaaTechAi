@@ -194,10 +194,12 @@ const Contact = () => {
             viewport={{ once: false, amount: 0.3 }}
           >
             <Card
-              className="p-4 rounded-3"
+              className="p-4 rounded-3 mx-auto"
               style={{
                 background: "transparent",
                 border: "1px solid white",
+                width: '90%', // or any width like 70%, 60%, 400px, etc.
+                maxWidth: '500px', // optional, for larger screens
               }}
             >
               <Form onSubmit={handleSubmit}>
