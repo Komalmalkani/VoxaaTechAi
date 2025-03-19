@@ -68,11 +68,11 @@ const Navbar = () => {
         <div>
           <Link
             className="btn text-light   d-lg-none"
-            to="/contact"
+            to="/pricing"
             onClick={handleNavClick}
             style={{ background: "transparent", fontSize: "14px" }}
           >
-            Contact
+            Pricing
           </Link>
 
           <button
