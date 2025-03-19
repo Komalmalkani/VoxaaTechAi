@@ -28,6 +28,8 @@ const PricingCard = ({ plan }) => {
     <div
       className="card  "
       style={{
+        width: isMobile ? "95%" :"100%", // Add this line
+    maxWidth: "400px", // Optional: Control maximum width
         // background: "linear-gradient(135deg,rgb(138, 136, 139),#000003,#000003,#000003,#000003,rgb(138, 136, 139))",
         background:"transparent",
         color: "white",
