@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import Pricing from "./Pricing";
+import { useState, useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom"; // Import Link
 import Contact from "../pages/Contact";
 import "../styles/Home.css";
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -13,10 +15,18 @@ const Home = () => {
   const isInView2 = useInView(ref2, { once: true });
   const isInView3 = useInView(ref3, { once: true });
   const text = "The Future Is Here.";
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="w-100">
       {/* Hero Section - Fullscreen */}
+      {isMobile && <Contact />}
       <section className="hero-section d-flex flex-column justify-content-center align-items-center text-center">
         {/* Background Wrapper with Animation */}
         <motion.div
@@ -79,7 +89,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="lead text-light py-2"
           >
-            Embrace the power of cutting-edge technology & shape the future with voice-driven intelligence.
+            Embrace the power of cutting-edge technology & shape the future with
+            voice-driven intelligence.
           </motion.p>
 
           <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center">
@@ -119,7 +130,6 @@ const Home = () => {
           </div>
         </motion.section>
       </section>
-
       {/* Scrollable Content */}
       <div
         className="container-fluid px-4  text-center "
@@ -144,40 +154,41 @@ const Home = () => {
           }}
         >
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: false, amount: 0.2 }} // Re-triggers when 20% of element is in view
-            className="col-md-4 border-0 bg-transparent"
-          >
-            <div className="card p-4 shadow border-0 ">
-              <h3>New Facilitator</h3>
-              <p className="text-secondary">
-                Import Knowledge Base and upgrade your AI assistant.
-              </p>
-            </div>
-          </motion.div>
+  initial={isMobile ? false : { opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }} // Always animate to final state
+  transition={isMobile ? {} : { duration: 1 }}
+  viewport={{ once: false, amount: 0.2 }}
+  className="col-md-4 border-0 bg-transparent"
+>
+  <div className="card p-4 shadow border-0">
+    <h3>New Facilitator</h3>
+    <p className="text-secondary">
+      Import Knowledge Base and upgrade your AI assistant.
+    </p>
+  </div>
+</motion.div>
+
+<motion.div
+  initial={isMobile ? false : { opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={isMobile ? {} : { duration: 1 }}
+  viewport={{ once: false, amount: 0.2 }}
+  className="col-md-4"
+>
+  <div className="card p-4 shadow">
+    <h3>AI Voice Agent</h3>
+    <p className="text-secondary">
+      Test AI LLM with 20,104+ integrations worldwide.
+    </p>
+  </div>
+</motion.div>
+
 
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: false, amount: 0.2 }} // Re-triggers when 20% of element is in view
-            className="col-md-4"
-          >
-            <div className="card p-4 shadow">
-              <h3>AI Voice Agent</h3>
-              <p className="text-secondary">
-                Test AI LLM with 20,104+ integrations worldwide.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: false, amount: 0.2 }} // Re-triggers when 20% of element is in view
+            initial={isMobile ? false : { opacity: 0, y: 50 }}
+            animate={isMobile ? false : { opacity: 1, y: 0 }}
+            transition={isMobile ? {} : { duration: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
             className="col-md-4"
           >
             <div className="card p-4 shadow">
@@ -194,7 +205,7 @@ const Home = () => {
         {/* Pricing & Integrations */}
       </div>
       <Pricing />
-      <Contact />
+      {!isMobile && <Contact />}{" "}
     </div>
   );
 };

@@ -36,6 +36,14 @@ border:"1px solid white",
         >
           {plan?.newPrice || "No Price"}
         </p>
+        <p className="fs-5 fw-bold "
+           style={{
+           
+            color: "#DB2777",
+          }}
+        >
+          {plan?.price || "No Price"}
+        </p>
 
         <p className="text-light">{plan?.description || "No description available"}</p>
 
@@ -60,7 +68,7 @@ border:"1px solid white",
             borderRadius: "8px",
           }}
         >
-          Get Started
+        Book A Call
         </button>
       </div>
     </div>
@@ -72,6 +80,7 @@ PricingCard.propTypes = {
   plan: PropTypes.shape({
     title: PropTypes.string,
     newPrice: PropTypes.string,
+    price:PropTypes.string,
     description: PropTypes.string,
     features: PropTypes.arrayOf(PropTypes.string),
   }),
