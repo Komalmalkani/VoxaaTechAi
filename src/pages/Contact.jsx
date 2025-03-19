@@ -22,7 +22,7 @@ const useMediaQuery = (query) => {
 const Contact = () => {
   const placeholders = {
     fullName: "John Deo",
-    email: "voxaa@gmail.com",
+    email: "Voxxaai@gmail.com",
     Mobile: "+1 123-456-7890",
     businessName: "xyz",
     aiPlan: "",

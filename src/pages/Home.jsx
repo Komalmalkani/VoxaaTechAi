@@ -139,6 +139,8 @@ const Home = () => {
         <section
           className="features-section row g-4 mt-n5 mb-5 border-0"
           style={{
+            marginLeft: "0px",
+            marginRight: "0px",
             top: 0,
             left: 0,
             width: "100%",
@@ -149,47 +151,46 @@ const Home = () => {
             backgroundColor: "",
             backgroundPosition: "center",
             backgroundBlendMode: "multiply",
-            zIndex: -1, // Keeps background behind content
-            borderRadius: "50%",
+            zIndex: -1,
+            borderRadius: isMobile ? "0%" : "50%", // <-- Fix here
           }}
         >
           <motion.div
-  initial={isMobile ? false : { opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }} // Always animate to final state
-  transition={isMobile ? {} : { duration: 1 }}
-  viewport={{ once: false, amount: 0.2 }}
-  className="col-md-4 border-0 bg-transparent"
->
-  <div className="card p-4 shadow border-0">
-    <h3>New Facilitator</h3>
-    <p className="text-secondary">
-      Import Knowledge Base and upgrade your AI assistant.
-    </p>
-  </div>
-</motion.div>
+            initial={isMobile ? false : { opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }} // Always animate to final state
+            transition={isMobile ? {} : { duration: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="col-12 col-md-4 mb-4"
+          >
+            <div className="card p-4 shadow border-0">
+              <h3>New Facilitator</h3>
+              <p className="text-secondary">
+                Import Knowledge Base and upgrade your AI assistant.
+              </p>
+            </div>
+          </motion.div>
 
-<motion.div
-  initial={isMobile ? false : { opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={isMobile ? {} : { duration: 1 }}
-  viewport={{ once: false, amount: 0.2 }}
-  className="col-md-4"
->
-  <div className="card p-4 shadow">
-    <h3>AI Voice Agent</h3>
-    <p className="text-secondary">
-      Test AI LLM with 20,104+ integrations worldwide.
-    </p>
-  </div>
-</motion.div>
-
+          <motion.div
+            initial={isMobile ? false : { opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={isMobile ? {} : { duration: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="col-12 col-md-4 mb-4"
+          >
+            <div className="card p-4 shadow">
+              <h3>AI Voice Agent</h3>
+              <p className="text-secondary">
+                Test AI LLM with 20,104+ integrations worldwide.
+              </p>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={isMobile ? false : { opacity: 0, y: 50 }}
             animate={isMobile ? false : { opacity: 1, y: 0 }}
             transition={isMobile ? {} : { duration: 1 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="col-md-4"
+            className="col-12 col-md-4 mb-4"
           >
             <div className="card p-4 shadow">
               <h3>Custom Personalities</h3>

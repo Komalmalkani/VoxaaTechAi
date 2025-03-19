@@ -1,8 +1,29 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const PricingCard = ({ plan }) => {
-  console.log("Received Plan in PricingCard:", plan); // ✅ Should log a single plan object
+  const navigate = useNavigate();
 
+  // Detect mobile/desktop
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Change breakpoint if needed
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  const handleNavigate = () => {
+    if (isMobile) {
+      navigate("/"); // Mobile -> Home page
+    } else {
+      navigate("/contact"); // Desktop -> Contact page
+    }
+  };
   return (
     <div
       className="card  "
@@ -67,6 +88,7 @@ border:"1px solid white",
             fontSize: "18px",
             borderRadius: "8px",
           }}
+          onClick={handleNavigate}
         >
         Book A Call
         </button>
