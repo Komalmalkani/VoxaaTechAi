@@ -1,7 +1,7 @@
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import Swal from 'sweetalert2';
-import { useState, useEffect } from 'react';
+import { useState, useEffect  } from 'react';
 
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
@@ -18,6 +18,8 @@ const useMediaQuery = (query) => {
 
   return matches;
 };
+
+
 
 const Contact = () => {
   const placeholders = {
@@ -90,7 +92,9 @@ const Contact = () => {
       });
     }
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when Contact page loads
+  }, []);
   return (
     <Container fluid className="min-vw-100 min-vh-100 d-flex align-items-center justify-content-center">
       <Row className="w-100 px-4 py-5">
