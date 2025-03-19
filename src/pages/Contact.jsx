@@ -50,7 +50,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://formspree.io/f/mzzeppdw", {
+      const response = await fetch("https://formspree.io/f/xjkygybl", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
