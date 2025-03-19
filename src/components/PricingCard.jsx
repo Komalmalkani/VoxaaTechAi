@@ -18,12 +18,13 @@ const PricingCard = ({ plan }) => {
   }, []);
 
   const handleNavigate = () => {
-    if (isMobile) {
-      navigate("/"); // Mobile -> Home page
-    } else {
-      navigate("/contact"); // Desktop -> Contact page
-    }
-  };
+      navigate("/contact");
+  }
+
+  useEffect(() => {
+    console.log("Is Mobile:", isMobile, "Width:", window.innerWidth);
+  }, [isMobile]);
+
   return (
     <div
       className="card  "

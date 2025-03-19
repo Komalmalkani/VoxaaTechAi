@@ -60,7 +60,7 @@ const Contact = () => {
         Swal.fire({
           icon: "success",
           title: "Message Sent!",
-          text: "Thank you for reaching out. We'll get back to you soon.",
+          text: "Thank you for reaching out. you'll soon get an email.",
           confirmButtonColor: "#6a1b9a",
         });
 
